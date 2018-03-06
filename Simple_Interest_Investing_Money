@@ -1,0 +1,11 @@
+P = float(input('Amount invested:'))
+r = float(input('Annual interest rate:'))
+# Enter r as decimal value not percentage
+t = float(input('Years invested:'))
+ 
+def SimpInt(P,r,t):
+    return P*(1+(r*t))
+ 
+A = SimpInt(P,r,t)
+
+print(A)
