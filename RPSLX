@@ -1,0 +1,81 @@
+## Rock, Paper, Scissors, Lizard, Xena
+
+name = input('***To end game enter: done*** \n rock, paper, scissors, lizard, Xena? ')
+
+def name_to_number(name):
+    if name == 'rock':
+        return 0
+    elif name == 'Xena':
+        return 1
+    elif name == 'paper':
+        return 2
+    elif name == 'lizard':
+        return 3
+    elif name == 'scissors':
+        return 4
+    else:
+        return None
+
+number = name_to_number(name)
+
+def number_to_name(number):
+    if number == 0:
+        return 'rock'
+    elif number == 1:
+        return 'Xena'
+    elif number == 2:
+        return 'paper'
+    elif number == 3:
+        return 'lizard'
+    elif number == 4:
+        return 'scissors'
+    else:
+        return None
+
+player_number = number_to_name(number)
+player_choice = player_number
+
+def rpslx1(player_choice):
+    print('')
+    print('You have chosen ' + str(player_choice) + '!')
+    player_number = name_to_number(player_choice)
+    return player_number
+
+print(rpslx1(player_choice))
+
+import random
+
+comp_number = random.randrange(0,5)
+comp_choice = comp_number
+
+def rpslx2(comp_choice):
+    comp_choice = number_to_name(comp_choice)
+    print('Computer has chosen ' + str(comp_choice) + '!')
+    return comp_number
+
+print(rpslx2(comp_choice))
+
+## problem section
+def rpslx3(number, comp_number):
+    result = ((number + 1) - (comp_number + 1)) % 5
+
+    if result == 1 or result == 2:
+        print('You win!')
+    elif result == 3 or result == 4:
+         print('Computer wins!')
+    else:
+        print('Tie!')
+
+print(rpslx3(number, comp_number))
+
+while name != 'done':
+    name = input('***To end game enter: done*** \n rock, paper, scissors, lizard, Xena? ')
+    player_choice = name
+
+    if player_choice == 'done':
+        break
+
+    else:
+        rpslx1(player_choice)
+        rpslx2(comp_choice)
+        rpslx3(number,comp_number)
